@@ -105,3 +105,16 @@ document.addEventListener("DOMContentLoaded", function () {
   window.scrollProducts = scrollProducts;
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+
+  hamburger.addEventListener('click', function() {
+    navbar.classList.toggle('active');
+
+    // Toggle icon (menu ↔ close)
+    hamburger.innerHTML = navbar.classList.contains('active') 
+      ? "<i class='bx bx-x'></i>" 
+      : "<i class='bx bx-menu'></i>";
+  });
+});
