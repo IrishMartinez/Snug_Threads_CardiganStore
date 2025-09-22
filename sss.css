@@ -83,7 +83,7 @@ ul { list-style: none; }
 .content1 h1 {
   font-size: 100px;
   margin-bottom: 30px;
-  margin-top: 150px; /* lowered compared to 700px */
+  margin-top: 80px; /* lowered compared to 700px */
 }
 
 /* Button */
@@ -128,6 +128,20 @@ ul { list-style: none; }
   margin-bottom: 30px;
   color: #111;
   text-align: left;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row on desktop */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
 }
 
 .products-wrapper {
