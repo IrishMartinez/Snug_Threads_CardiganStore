@@ -11,7 +11,7 @@ ul { list-style: none; }
 
 /* ===== Header ===== */
 .header {
-  position:absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   padding: 20px 10%;
@@ -34,67 +34,35 @@ ul { list-style: none; }
   transform: scale(1.1);
 }
 
-/* Default navbar */
 .navbar {
   display: flex;
   gap: 50px;
 }
-
 .navbar a {
   font-size: 18px;
   color: #fff;
   border-bottom: 3px solid transparent;
   transition: 0.3s ease;
 }
-
-.navbar a:hover {
-  border-bottom: 3px solid #e0e59d;
+.navbar a:hover,
+.navbar a.active {
+  color: #e0e59d;
+  border-bottom: 3px solid #fff;
 }
 
-/* Hamburger icon hidden on desktop */
+/* Hamburger (hidden on desktop) */
 .hamburger {
   display: none;
-  font-size: 30px;
+  font-size: 28px;
   color: #fff;
   cursor: pointer;
 }
 
-/* 🔹 Mobile Responsive */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .navbar {
-    display: none;
-    flex-direction: column;
-    background: #081c15;
-    position: absolute;
-    top: 65px;
-    right: 20px;
-    width: 200px;
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  .navbar a {
-    padding: 12px 0;
-    font-size: 16px;
-  }
-
-  /* When active */
-  .navbar.active {
-    display: flex;
-  }
-}
-
-
 /* ===== Hero Section ===== */
 .upperhome {
   width: 100%;
-  min-height: 100vh; /* allow flexible height instead of forcing 100vh */
-  background: url("picturebg.png") no-repeat center center;
-  background-size: cover; /* ensures the image covers the whole area */
+  height: 100vh;
+  background: url("picturebg.png") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,53 +71,48 @@ ul { list-style: none; }
   color: #fff;
   padding: 0 20px;
 }
-
-/* 🔹 Mobile responsive tweaks */
-@media (max-width: 768px) {
-  .upperhome {
-    background-position: top center; /* shift focus to top on small screens */
-    padding: 40px 20px; /* more breathing room */
-  }
-
-  .upperhome h1 {
-    font-size: 28px;
-  }
-
-  .upperhome p {
-    font-size: 16px;
-  }
+.content1 {
+  position: absolute;
+  bottom: 100px;   /* adjust distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-@media (max-width: 480px) {
-  .upperhome {
-    min-height: 80vh; /* reduce height on very small devices */
-  }
-
-  .upperhome h1 {
-    font-size: 22px;
-  }
-
-  .upperhome p {
-    font-size: 14px;
-  }
-}
-
-
+/* Heading */
 .content1 h1 {
   font-size: 100px;
   margin-bottom: 30px;
-  margin-top: 400px;
+  margin-top: 150px; /* lowered compared to 700px */
 }
+
+/* Button */
 .content1 a {
+  display: inline-block;
   color: #878585;
   border: 2px solid #000000;
   padding: 12px 50px;
   border-radius: 50px;
   transition: 0.3s;
+  margin-top: 50px; /* lowered compared to 900px */
 }
+
 .content1 a:hover {
   background: #fff;
   color: #000;
+}
+
+/* 🔹 Responsive adjustments */
+@media (max-width: 768px) {
+  .content1 h1 {
+    font-size: 50px;
+    margin-top: 100px;
+  }
+
+  .content1 a {
+    padding: 10px 30px;
+    margin-top: 30px;
+  }
 }
 
 /* ===== Products Section ===== */
